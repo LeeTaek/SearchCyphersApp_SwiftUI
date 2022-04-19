@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 // MARK: - UserInfo
 struct UserInfo: Codable {
@@ -35,6 +36,7 @@ struct MatchInfo: Codable {
     let matches: Matches
 }
 
+
 // MARK: - Matches
 struct Matches: Codable {
     let gameTypeId, next: String
@@ -43,7 +45,7 @@ struct Matches: Codable {
 
 
 // MARK: - Row
-struct MatchRow: Codable {
+struct MatchRow: Codable  {
     let date, matchId: String
     let map: Map
     let playInfo: PlayInfo
@@ -114,32 +116,6 @@ struct Record: Codable {
 }
 
 
-// MARK: - data -> NsDictionary
-extension Encodable {
-    
-    func encode() throws -> [String:Any] {
-        
-        let data = try JSONEncoder().encode(self)
-        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any] else {
-            throw NSError()
-        }
-        
-        return dictionary
-    }
-}
-
-
-
-// MARK: - NSDictionary -> data
-extension Decodable {
-        
-    static func decode<T: Decodable>(dictionary : [String:Any]) throws -> T {
-        let data = try JSONSerialization.data(withJSONObject: dictionary, options: [.prettyPrinted])
-        
-        return try JSONDecoder().decode(T.self, from: data)
-    }
-}
-
 
 let MatchRowSamples = [
     MatchRow(date:  "2022-04-13 00:55", matchId: "89f11e549709d2a7ebab20b9bf0dc58626f53135aa58a38940e14bd120276693", map: mapSample, playInfo: playInfoSample, position: positionSample)
@@ -157,3 +133,5 @@ let attributeSample = [
     Attribute(level: 3, id: "6d8fb905d69edf1c9f73495c3ee44d28", name: "선봉장")
 
 ]
+
+

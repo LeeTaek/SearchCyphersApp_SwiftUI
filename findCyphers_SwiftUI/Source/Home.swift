@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct Home: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+    
+    
+    var body: some View { 
+        Text("홈화면")
     }
+    
 }
 
 struct Home_Previews: PreviewProvider {

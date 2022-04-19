@@ -18,5 +18,4 @@ enum API {
     static let RANK_URL : String = "https://api.neople.co.kr/cy/ranking/ratingpoint"
     
     static let API_KEY : String = "I5mVNxBmEUhox1JWullCu6zvAgGa5qPO"
-
 }

@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
-import Alamofire
 import Kingfisher
 
 struct MatchListRow: View {
     let matchInfo: MatchRow
+    
+    init(_ matchInfo : MatchRow) {
+        self.matchInfo = matchInfo
+    }
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -38,11 +42,10 @@ struct MatchListRow: View {
         .cornerRadius(6)
         .shadow(color: Color.primaryShadow, radius: 1, x: 2, y: 2)
         .padding(.vertical, 8)
-
-        
-        
-        
     }
+    
+    
+    
     
     var characterImage: some View {
         GeometryReader { _ in
@@ -50,23 +53,23 @@ struct MatchListRow: View {
            
             KFImage.url(characterImageURL)
                 .resizable()
-                .frame(width: 100, height: 100)
+                .frame(width: 80, height: 80)
                 .cornerRadius(20)
 
              
-        }.frame(width: 100, height: 100)
+        }.frame(width: 80, height: 80)
     }
     
     
     var matchDescription: some View {
        
         VStack() {
-            // 이름 + 레벨
+            //MARK: - 캐릭터 이름, 레벨
             HStack {
     
                 Text("\(matchInfo.playInfo.characterName)")
-                    .font(.headline)
-                    .fontWeight(.medium)
+                    .font(.body)
+                    .fontWeight(.bold)
                     .padding(.bottom, 6)
                 Spacer()
                 
@@ -78,15 +81,19 @@ struct MatchListRow: View {
                     .padding(.bottom, 6)
             }
             
-            /// 맵, KDA
+            //MARK: - 맵, KDA
             HStack {
                 
                 let KDA : Double = 0
-                Text("\(matchInfo.map.name)")
-                    .font(.body)
+                Text("\(splitText(matchInfo.map.name))")
+                    .font(.system(size: 16))
+                    .fixedSize()
+                    
                 Spacer()
                 Text("KDA : \(String(format: "%.2f", KDA))")
                     .font(.body)
+                    .fixedSize()
+
                 
             }
             
@@ -97,8 +104,7 @@ struct MatchListRow: View {
         
     }
     
-    // 포지션, 특성
-
+    //MARK: - 포지션, 특성
     var position: some View {
         HStack {
             let attributeImageURL1 = URL(string: API.ATTRIBUTE_IMAGE_URL + matchInfo.position.attribute[0].id)
@@ -107,7 +113,9 @@ struct MatchListRow: View {
 
             let attributeImageURL3 = URL(string: API.ATTRIBUTE_IMAGE_URL + matchInfo.position.attribute[2].id)
             
-            Text("포지션")
+            Text("특성")
+                .font(.body)
+            
             Spacer()
             
             KFImage(attributeImageURL1)
@@ -125,21 +133,31 @@ struct MatchListRow: View {
             
         }
     }
+    
+    // 화면에 출력할 설명창 글 분할
+    func splitText(_ text: String) -> String {
+        guard text.contains(" ") else { return text }
+        
+        let centerIdx = text.index(text.startIndex, offsetBy: text.count / 2)
+        let centerSpaceIdx = text[..<centerIdx].lastIndex(of: " ")
+        ?? text[centerIdx...].firstIndex(of: " ")
+        ?? text.index(before: text.endIndex)
+        
+        let afterSpaceIdx = text.index(after: centerSpaceIdx)
+        let lhsString = text[..<afterSpaceIdx].trimmingCharacters(in: .whitespaces)
+        let rhsString = text[afterSpaceIdx...].trimmingCharacters(in: .whitespaces)
+        
+        return String(lhsString + "\n" + rhsString)
+    }
 
 }
 
 
-private extension MatchListRow {
-    
- 
-    
-    
-}
 
 
 
 struct MatchListRow_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListRow(matchInfo: MatchRowSamples[0])
+        MatchListRow(MatchRowSamples[0])
     }
 }

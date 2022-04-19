@@ -7,27 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74354E5A280E661000D8B642 /* UserMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74354E59280E661000D8B642 /* UserMatchViewModel.swift */; };
+		74354E5C280E69C600D8B642 /* MatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74354E5B280E69C600D8B642 /* MatchList.swift */; };
+		74877BCF280EA308009A7140 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74877BCE280EA308009A7140 /* MatchDetailView.swift */; };
 		749BE2CF280D26C00060FB61 /* findCyphers_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2CE280D26C00060FB61 /* findCyphers_SwiftUIApp.swift */; };
 		749BE2D1280D26C00060FB61 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2D0280D26C00060FB61 /* Home.swift */; };
 		749BE2D3280D26C00060FB61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749BE2D2280D26C00060FB61 /* Assets.xcassets */; };
 		749BE2D6280D26C00060FB61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749BE2D5280D26C00060FB61 /* Preview Assets.xcassets */; };
-		749BE2E2280D288D0060FB61 /* playerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2E1280D288D0060FB61 /* playerInfo.swift */; };
+		749BE2E2280D288D0060FB61 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2E1280D288D0060FB61 /* PlayerInfo.swift */; };
 		749BE2E5280D28A10060FB61 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2E4280D28A10060FB61 /* URL.swift */; };
 		749BE2EE280D3BD80060FB61 /* MatchListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2ED280D3BD80060FB61 /* MatchListRow.swift */; };
 		749BE2F4280D47430060FB61 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2F3280D47430060FB61 /* ColorExtension.swift */; };
+		749BE2F8280D54CB0060FB61 /* MyAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2F7280D54CB0060FB61 /* MyAlamofireManager.swift */; };
+		749BE2FA280D555D0060FB61 /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2F9280D555D0060FB61 /* MyLogger.swift */; };
+		749BE2FC280D55790060FB61 /* MyAPIStatusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2FB280D55790060FB61 /* MyAPIStatusLogger.swift */; };
+		749BE2FE280D55920060FB61 /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2FD280D55920060FB61 /* BaseInterceptor.swift */; };
+		749BE300280D55A90060FB61 /* MySearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2FF280D55A90060FB61 /* MySearchRouter.swift */; };
+		749BE302280D55C90060FB61 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE301280D55C90060FB61 /* MyError.swift */; };
 		A4115BBE6FCC255650537BC7 /* Pods_findCyphers_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB293CA9E2C2438A9A021E9 /* Pods_findCyphers_SwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74354E59280E661000D8B642 /* UserMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatchViewModel.swift; sourceTree = "<group>"; };
+		74354E5B280E69C600D8B642 /* MatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchList.swift; sourceTree = "<group>"; };
+		74354E5D280E718700D8B642 /* findCyphers-SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "findCyphers-SwiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
+		74877BCE280EA308009A7140 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
 		749BE2CB280D26C00060FB61 /* findCyphers_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = findCyphers_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749BE2CE280D26C00060FB61 /* findCyphers_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findCyphers_SwiftUIApp.swift; sourceTree = "<group>"; };
 		749BE2D0280D26C00060FB61 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		749BE2D2280D26C00060FB61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		749BE2D5280D26C00060FB61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		749BE2E1280D288D0060FB61 /* playerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerInfo.swift; sourceTree = "<group>"; };
+		749BE2E1280D288D0060FB61 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
 		749BE2E4280D28A10060FB61 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		749BE2ED280D3BD80060FB61 /* MatchListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRow.swift; sourceTree = "<group>"; };
 		749BE2F3280D47430060FB61 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		749BE2F7280D54CB0060FB61 /* MyAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlamofireManager.swift; sourceTree = "<group>"; };
+		749BE2F9280D555D0060FB61 /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
+		749BE2FB280D55790060FB61 /* MyAPIStatusLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPIStatusLogger.swift; sourceTree = "<group>"; };
+		749BE2FD280D55920060FB61 /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
+		749BE2FF280D55A90060FB61 /* MySearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchRouter.swift; sourceTree = "<group>"; };
+		749BE301280D55C90060FB61 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		8A756CD7764F38832A77AB4E /* Pods-findCyphers_SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findCyphers_SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-findCyphers_SwiftUI/Pods-findCyphers_SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		DD76EF7B814C663EADBD9408 /* Pods-findCyphers_SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findCyphers_SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-findCyphers_SwiftUI/Pods-findCyphers_SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		FBB293CA9E2C2438A9A021E9 /* Pods_findCyphers_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findCyphers_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +102,8 @@
 		749BE2CD280D26C00060FB61 /* findCyphers_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				74354E5D280E718700D8B642 /* findCyphers-SwiftUI-Info.plist */,
+				749BE2F5280D549F0060FB61 /* Network */,
 				749BE2E6280D31560060FB61 /* UserInterface */,
 				749BE2DE280D275C0060FB61 /* Model */,
 				749BE2DC280D27150060FB61 /* Source */,
@@ -105,7 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				749BE2D0280D26C00060FB61 /* Home.swift */,
+				74354E5B280E69C600D8B642 /* MatchList.swift */,
 				749BE2ED280D3BD80060FB61 /* MatchListRow.swift */,
+				74877BCE280EA308009A7140 /* MatchDetailView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -121,8 +144,10 @@
 		749BE2DE280D275C0060FB61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				749BE2E1280D288D0060FB61 /* playerInfo.swift */,
+				749BE2E1280D288D0060FB61 /* PlayerInfo.swift */,
 				749BE2E4280D28A10060FB61 /* URL.swift */,
+				749BE301280D55C90060FB61 /* MyError.swift */,
+				74354E59280E661000D8B642 /* UserMatchViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				749BE2F2280D47210060FB61 /* CustomStyle */,
-				749BE2F3280D47430060FB61 /* ColorExtension.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -139,8 +163,21 @@
 		749BE2F2280D47210060FB61 /* CustomStyle */ = {
 			isa = PBXGroup;
 			children = (
+				749BE2F3280D47430060FB61 /* ColorExtension.swift */,
 			);
 			path = CustomStyle;
+			sourceTree = "<group>";
+		};
+		749BE2F5280D549F0060FB61 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				749BE2F7280D54CB0060FB61 /* MyAlamofireManager.swift */,
+				749BE2F9280D555D0060FB61 /* MyLogger.swift */,
+				749BE2FB280D55790060FB61 /* MyAPIStatusLogger.swift */,
+				749BE2FD280D55920060FB61 /* BaseInterceptor.swift */,
+				749BE2FF280D55A90060FB61 /* MySearchRouter.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,12 +294,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749BE302280D55C90060FB61 /* MyError.swift in Sources */,
 				749BE2EE280D3BD80060FB61 /* MatchListRow.swift in Sources */,
 				749BE2E5280D28A10060FB61 /* URL.swift in Sources */,
-				749BE2E2280D288D0060FB61 /* playerInfo.swift in Sources */,
+				74354E5C280E69C600D8B642 /* MatchList.swift in Sources */,
+				749BE300280D55A90060FB61 /* MySearchRouter.swift in Sources */,
+				749BE2E2280D288D0060FB61 /* PlayerInfo.swift in Sources */,
 				749BE2F4280D47430060FB61 /* ColorExtension.swift in Sources */,
+				74877BCF280EA308009A7140 /* MatchDetailView.swift in Sources */,
 				749BE2D1280D26C00060FB61 /* Home.swift in Sources */,
+				749BE2FC280D55790060FB61 /* MyAPIStatusLogger.swift in Sources */,
+				749BE2FE280D55920060FB61 /* BaseInterceptor.swift in Sources */,
+				74354E5A280E661000D8B642 /* UserMatchViewModel.swift in Sources */,
+				749BE2F8280D54CB0060FB61 /* MyAlamofireManager.swift in Sources */,
 				749BE2CF280D26C00060FB61 /* findCyphers_SwiftUIApp.swift in Sources */,
+				749BE2FA280D555D0060FB61 /* MyLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +441,7 @@
 				DEVELOPMENT_TEAM = H4MSW7FUBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "findCyphers-SwiftUI-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -425,6 +472,7 @@
 				DEVELOPMENT_TEAM = H4MSW7FUBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "findCyphers-SwiftUI-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
