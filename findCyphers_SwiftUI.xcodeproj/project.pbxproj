@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7415A4C12810160F007D8538 /* MatchListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C02810160F007D8538 /* MatchListRow.swift */; };
+		7415A4C3281017FE007D8538 /* MatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C2281017FE007D8538 /* MatchList.swift */; };
 		74354E5A280E661000D8B642 /* UserMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74354E59280E661000D8B642 /* UserMatchViewModel.swift */; };
 		74877BCF280EA308009A7140 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74877BCE280EA308009A7140 /* MatchDetailView.swift */; };
 		749BE2CF280D26C00060FB61 /* findCyphers_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BE2CE280D26C00060FB61 /* findCyphers_SwiftUIApp.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		7415A4C02810160F007D8538 /* MatchListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRow.swift; sourceTree = "<group>"; };
+		7415A4C2281017FE007D8538 /* MatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchList.swift; sourceTree = "<group>"; };
 		74354E59280E661000D8B642 /* UserMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatchViewModel.swift; sourceTree = "<group>"; };
 		74354E5D280E718700D8B642 /* findCyphers-SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "findCyphers-SwiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
 		74877BCE280EA308009A7140 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
@@ -137,10 +139,11 @@
 		749BE2DC280D27150060FB61 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				74D70094280FDC6E00243CF2 /* CharacterInfo */,
 				74D7008F280FD3AC00243CF2 /* SearchUser */,
+				74D70094280FDC6E00243CF2 /* CharacterInfo */,
 				749BE2D0280D26C00060FB61 /* Home.swift */,
 				74D70090280FD5E100243CF2 /* mainTabView.swift */,
+				74D70099280FEE8600243CF2 /* FavoriteButton.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 		74D7008F280FD3AC00243CF2 /* SearchUser */ = {
 			isa = PBXGroup;
 			children = (
+				7415A4C2281017FE007D8538 /* MatchList.swift */,
 				74877BCE280EA308009A7140 /* MatchDetailView.swift */,
 				7415A4C02810160F007D8538 /* MatchListRow.swift */,
 			);
@@ -208,7 +212,6 @@
 			children = (
 				74D7009B280FF3FE00243CF2 /* CharacterInfoList.swift */,
 				74D70095280FDC8700243CF2 /* CharacterInfoRow.swift */,
-				74D70099280FEE8600243CF2 /* FavoriteButton.swift */,
 				74D7009D280FF55600243CF2 /* DetailCharacterInfo.swift */,
 			);
 			path = CharacterInfo;
@@ -349,6 +352,7 @@
 				74D70093280FDADD00243CF2 /* Character.swift in Sources */,
 				749BE2FA280D555D0060FB61 /* MyLogger.swift in Sources */,
 				74D7009C280FF3FE00243CF2 /* CharacterInfoList.swift in Sources */,
+				7415A4C3281017FE007D8538 /* MatchList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

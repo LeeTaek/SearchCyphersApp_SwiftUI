@@ -49,4 +49,11 @@ final class CharacterViewModel: ObservableObject {
     }
     
     
+    
+    func findCharInfo(of character: CharacterId) -> CharacterInfo {
+        return characters.filter{ $0.characterId == character }[0]
+        
+    }
+    
+    
 }

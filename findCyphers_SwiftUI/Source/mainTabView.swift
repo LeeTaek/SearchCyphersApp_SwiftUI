@@ -38,13 +38,13 @@ private extension mainTabView {
     }
     
     var searchUser: some View {
-        CharacterInfoList()
+        MatchList()
             .tag(Tabs.searchUser)
             .tabItem(image: "person.fill.viewfinder", text: "유저검색")
     }
     
     var characterInfo: some View {
-        Text("캐릭터 공략")
+        CharacterInfoList()
             .tag(Tabs.characterInfo)
             .tabItem(image: "person.fill.viewfinder", text: "캐릭터공략")
     }

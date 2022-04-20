@@ -8,35 +8,12 @@
 import SwiftUI
 
 struct Home: View {
-    @ObservedObject var userMatchViewModel = UserMatchViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack{
-                
-                matchingList
-
-                
-            }.navigationTitle("최근 매칭 기록")
-            
-        }
-
-        
-    }
-    
-
-    
-    var matchingList: some View {
-        List(userMatchViewModel.match, id:\.matchId) { matcingInfo in
-            HStack {
-                MatchListRow(matcingInfo)
-                NavigationLink(destination: MatchDetailView()) {
-                    EmptyView()
-                }.frame(width: 0)
-            }
-        }
+      Text("현재 진행중인 이벤트")
     }
 }
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {

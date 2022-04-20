@@ -32,6 +32,7 @@ struct CharacterInfoRow: View {
             
             
             FavoriteButton(character: character)
+                .padding(.trailing, 30)
             
            
             
