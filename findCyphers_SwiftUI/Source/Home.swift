@@ -8,12 +8,34 @@
 import SwiftUI
 
 struct Home: View {
+    @ObservedObject var userMatchViewModel = UserMatchViewModel()
     
-    
-    var body: some View { 
-        Text("홈화면")
+    var body: some View {
+        NavigationView {
+            VStack{
+                
+                matchingList
+
+                
+            }.navigationTitle("최근 매칭 기록")
+            
+        }
+
+        
     }
     
+
+    
+    var matchingList: some View {
+        List(userMatchViewModel.match, id:\.matchId) { matcingInfo in
+            HStack {
+                MatchListRow(matcingInfo)
+                NavigationLink(destination: MatchDetailView()) {
+                    EmptyView()
+                }.frame(width: 0)
+            }
+        }
+    }
 }
 
 struct Home_Previews: PreviewProvider {

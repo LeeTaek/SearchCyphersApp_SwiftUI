@@ -11,7 +11,9 @@ import SwiftUI
 struct findCyphers_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            MatchList()
+            mainTabView()
+                .environmentObject(CharacterViewModel())
+
         }
     }
 }

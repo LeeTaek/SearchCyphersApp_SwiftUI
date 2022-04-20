@@ -24,6 +24,7 @@ class UserMatchViewModel: ObservableObject {
     }
     
     
+    // 네트워크를 통해 최근 전적 호출
     func fetchUser() {
         print(#fileID, #function, #line, "")
    
@@ -40,7 +41,6 @@ class UserMatchViewModel: ObservableObject {
             }, receiveValue: { (receivedValue : [MatchRow]) in
                 print("받은 값 : \(receivedValue.count)")
                 self.match = receivedValue
-
             }).store(in: &subscription)
 
     }

@@ -53,6 +53,7 @@ enum MySearchRouter: URLRequestConvertible {
             
         case .searchRank :
             return ["limit":"30"]
+    
         }
     }
     

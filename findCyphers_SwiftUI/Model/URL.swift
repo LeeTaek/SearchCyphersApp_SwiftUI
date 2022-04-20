@@ -10,6 +10,8 @@ import SwiftUI
 
 enum API {
     static let BASE_URL : String = "https://api.neople.co.kr/cy/"
+
+    static let CHARACTER_SEARCH_URL: String = "https://api.neople.co.kr/cy/characters"
     
     static let CHARACTER_IMAGE_URL : String = "https://img-api.neople.co.kr/cy/characters/"
         
