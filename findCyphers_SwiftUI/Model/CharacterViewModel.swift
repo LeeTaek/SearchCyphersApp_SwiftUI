@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import Alamofire
 
-final class CharacterViewModel: ObservableObject {
+class CharacterViewModel: ObservableObject {
     
     var subscription = Set<AnyCancellable>()
     @Published var characters = [CharacterInfo]()
@@ -21,7 +21,7 @@ final class CharacterViewModel: ObservableObject {
     }
     
     
-    
+    //MARK: - 전체 캐릭터 아이디 및 이름 호출
     func fetchCharacter() {
         MyAlamofireManager.shared
             .session
@@ -42,14 +42,14 @@ final class CharacterViewModel: ObservableObject {
     
     
     
-    
+    //MARK: - 선호 캐릭터 설정 토글
     func toggleFavorite(of character: CharacterInfo) {
         guard let index = characters.firstIndex(of: character) else { return }
         characters[index].isFavorite.toggle()
     }
     
     
-    
+    //MARK: - 캐릭터 아이디를 가지고 캐릭터 선호캐릭터 여부와 정보 호출
     func findCharInfo(of character: CharacterId) -> CharacterInfo {
         return characters.filter{ $0.characterId == character }[0]
         

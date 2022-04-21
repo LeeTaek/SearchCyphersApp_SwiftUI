@@ -203,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				7415A4C2281017FE007D8538 /* MatchList.swift */,
-				74877BCE280EA308009A7140 /* MatchDetailView.swift */,
 				7415A4C02810160F007D8538 /* MatchListRow.swift */,
+				74877BCE280EA308009A7140 /* MatchDetailView.swift */,
 			);
 			path = SearchUser;
 			sourceTree = "<group>";

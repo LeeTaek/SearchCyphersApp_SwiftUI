@@ -47,6 +47,7 @@ struct CharacterInfoList: View {
             .padding(.bottom, 8)
     }
     
+    //MARK: - 캐릭터 리스트
     var characterList: some View {
         List(characterVM.characters) { cha in
             HStack {

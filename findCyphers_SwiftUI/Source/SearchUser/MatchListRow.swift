@@ -11,6 +11,8 @@ import Kingfisher
 
 struct MatchListRow: View {
     @EnvironmentObject private var characters : CharacterViewModel
+    @State private var willAppear: Bool = false
+
     let matchInfo: MatchRow
 
     var body: some View {
@@ -40,14 +42,16 @@ struct MatchListRow: View {
         .cornerRadius(6)
         .shadow(color: Color.primaryShadow, radius: 1, x: 2, y: 2)
         .padding(.vertical, 8)
-
+        .opacity(willAppear ? 1 : 0)            // 애니메이션 추가
+        .animation(.easeInOut(duration: 0.4), value: self.willAppear)
+        .onAppear{ self.willAppear = true }
         
         
         
     }
     
     
-    //MARK: - 매릭터 이미지
+    //MARK: - 캐릭터 이미지
     var characterImage: some View {
         GeometryReader { _ in
             let characterImageURL = URL(string: API.CHARACTER_IMAGE_URL + matchInfo.playInfo.characterId)
@@ -58,7 +62,7 @@ struct MatchListRow: View {
                 .cornerRadius(20)
                 
 
-        }.frame(width: 120, height: 120)
+        }.frame(width: 100, height: 100)
             .overlay(
                 Image("\(matchInfo.position.name)")
                     .resizable()
@@ -66,6 +70,7 @@ struct MatchListRow: View {
                     .position(x: 80, y: 80)
                     .padding()
             ).frame(alignment: .bottomTrailing)
+            .padding(.bottom)
     }
     
     
@@ -143,11 +148,12 @@ struct MatchListRow: View {
     }
                            
     
+    //MARK: - 캐릭터 아이디
     var charId: CharacterId {
         CharacterId(characterId: matchInfo.playInfo.characterId, characterName: matchInfo.playInfo.characterName)
     }
                            
-
+    
 }
 
 

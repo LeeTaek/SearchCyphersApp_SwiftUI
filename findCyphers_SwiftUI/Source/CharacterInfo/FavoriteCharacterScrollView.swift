@@ -21,9 +21,10 @@ struct FavoriteCharacterScrollView: View {
             }
             
         }.padding()
+            .transition(.slide)
     }
     
-    
+    //MARK: - 캐릭터 창 타이틀
     var title: some View {
         HStack(alignment: .top, spacing: 5) {
             Text("즐겨찾는 캐릭터")
@@ -40,12 +41,15 @@ struct FavoriteCharacterScrollView: View {
             
         }.padding(.bottom, 4)
             .onTapGesture {
-                self.showingImage.toggle()
+                withAnimation {
+                    self.showingImage.toggle()
+                }
             }
         
     }
     
     
+    //MARK: - 캐릭터 스크롤뷰
     var characters: some View {
         let favoriteCharacters = characterVM.characters.filter { $0.isFavorite }
         
@@ -57,11 +61,11 @@ struct FavoriteCharacterScrollView: View {
                     }
                 }
             }
-        }
+        }.animation(.spring(dampingFraction: 0.78))
     }
     
     
-    
+    //MARK: - 캐릭터 이미지
     func eachCharacter(_ character: CharacterInfo) -> some View {
         GeometryReader { geometry in
             let ImageURL = URL(string: API.CHARACTER_IMAGE_URL + character.characterId.characterId)
@@ -86,6 +90,7 @@ struct FavoriteCharacterScrollView: View {
     }
     
     
+    //MARK: - 캐릭터 이미지 사이즈 조절
     func scaledValue(from geometry: GeometryProxy) -> CGFloat {
         let xOffset = geometry.frame(in: .global).minX - 16 // 글로벌 좌표 기준으로 상품의 x값을 구하고, 그 값에 적용된 여백 값만큼 빼주면 한 contentOffset 얻을 수 있음.
         

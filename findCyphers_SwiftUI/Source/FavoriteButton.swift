@@ -14,15 +14,18 @@ struct FavoriteButton: View {
     
     var body: some View {
         // 하트 버튼
-        Button(action: {
-            self.characters.toggleFavorite(of: self.character)
-        }) {
-            Image(systemName: heartImage)
-                .resizable()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.renatocolor)
+     
+        Image(systemName: heartImage)
+            .resizable()
+            .frame(width: 20, height: 20)
+            .foregroundColor(.renatocolor)
+            .onTapGesture {
+                withAnimation { // 즐겨찾기 여부 추가 
+                    self.characters.toggleFavorite(of: self.character)
+                }
+            }
               
-        }
+        
     }
     
     var heartImage : String {
