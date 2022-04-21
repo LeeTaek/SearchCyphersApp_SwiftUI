@@ -13,6 +13,34 @@ struct UserInfo: Codable {
     let rows: [PlayerInfo]
 }
 
+// MARK: - DetailMatchInfo
+struct DetailMatchInfo: Codable {
+    let date, gameTypeId: String
+    let map: Map
+    let teams: [Team]
+    let players: [Player]
+}
+
+
+// MARK: - Player
+struct Player: Codable {
+    let playerId, nickname: String
+    let map: Map
+    let playInfo: PlayInfo
+    let position: Position
+    let items: [Item]
+
+}
+
+
+// MARK: - Team
+struct Team: Codable {
+    let result: String
+    let players: [String]
+}
+
+
+
 // MARK: - Row
 struct PlayerInfo: Codable {
     let playerId, nickname: String
@@ -80,6 +108,17 @@ struct PlayInfo: Codable {
         case random, partyUserCount, partyInfo, playTypeName, characterId, characterName, level, killCount, deathCount, assistCount, attackPoint, damagePoint, battlePoint, sightPoint, towerAttackPoint, backAttackCount, comboCount, spellCount, healAmount, sentinelKillCount, demolisherKillCount, trooperKillCount, guardianKillCount, guardTowerKillCount, getCoin, spendCoin, spendConsumablesCoin, playTime, responseTime, minLifeTime, maxLifeTime
     }
 }
+
+// MARK: - Item
+struct Item: Codable {
+    let itemId, itemName, slotCode, slotName: String
+    let rarityCode: String
+    let rarityName: String
+    let equipSlotCode, equipSlotName: String
+
+}
+
+
 
 struct RankMatchInfo : Codable {
     let averageRate : [String : Double]

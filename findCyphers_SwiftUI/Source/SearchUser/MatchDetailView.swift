@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct MatchDetailView: View {
+    let matchingInfo: MatchRow
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
     }
 }
 
 struct MatchDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchDetailView()
+        MatchDetailView(matchingInfo: MatchRowSamples[0])
     }
 }

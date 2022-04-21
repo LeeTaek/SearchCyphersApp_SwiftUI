@@ -16,6 +16,8 @@ class UserMatchViewModel: ObservableObject {
     
     @Published var match = [MatchRow]()
     @Published var nickname = ""
+    @Published var nicknameList = [String]()
+    
     var userId: String = ""
     
     init() {
@@ -38,13 +40,18 @@ class UserMatchViewModel: ObservableObject {
                 print("데이터 스트림 성공")
             }, receiveValue: { (receivedValue : UserInfo) in
                 print(" 유저 ID : \(receivedValue)")
-                self.userId = receivedValue.rows[0].playerId
-                self.fetchMatch()
+                guard let userInfo =  receivedValue.rows.first?.playerId else { print("닉네임 없음") ; return }
+                self.userId = userInfo
+                if !self.nicknameList.contains(self.nickname) {     // 검색 기록에 추가
+                    self.nicknameList.append(self.nickname)
+                }
+                self.fetchMatch()                               //매칭기록 호출 
+                
             }).store(in: &subscription)
         
     }
     
-    
+  
     
     //MARK: - 최근 매칭 호출
     func fetchMatch() {
@@ -65,6 +72,7 @@ class UserMatchViewModel: ObservableObject {
                 self.match = receivedValue
             }).store(in: &subscription)
     }
+    
     
     func getUserInfo(_ nickname: String) {
         self.nickname = nickname
