@@ -74,6 +74,7 @@ class UserMatchViewModel: ObservableObject {
     }
     
     
+    
     func getUserInfo(_ nickname: String) {
         self.nickname = nickname
         fetchUserID()

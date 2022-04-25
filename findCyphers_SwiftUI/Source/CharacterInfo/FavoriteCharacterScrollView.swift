@@ -7,10 +7,13 @@
 
 import SwiftUI
 import Kingfisher
+import RealmSwift
 
 struct FavoriteCharacterScrollView: View {
     @EnvironmentObject private var characterVM: CharacterViewModel
     @Binding var showingImage: Bool
+    var favoriteChar = FavoriteCharacters()
+
     
     var body: some View {
         VStack(alignment: .leading){
@@ -49,13 +52,36 @@ struct FavoriteCharacterScrollView: View {
     }
     
     
-    //MARK: - 캐릭터 스크롤뷰
+//    //MARK: - API 기반 캐릭터 스크롤뷰
+//    var characters: some View {
+//        let favoriteCharactersList = characterVM.characters.filter { $0.isFavorite }
+//
+//        return ScrollView(.horizontal, showsIndicators: false) {
+//            HStack (spacing: 0) {
+//                ForEach(favoriteCharactersList) { character in
+//                    NavigationLink(destination: DetailCharacterInfo()) {
+//                        self.eachCharacter(character)
+//                    }
+//                }
+//            }
+//        }.animation(.spring(dampingFraction: 0.78))
+//    }
+
+    
+    
+    //MARK: - realm 기반 선호 캐릭터 스크롤뷰
     var characters: some View {
-        let favoriteCharacters = characterVM.characters.filter { $0.isFavorite }
         
+        let realm = try! Realm()
+        var charList = [CharacterInfo]()
+        
+        realm.objects(FavoriteCharacters.self)
+            .filter{ $0.isFavorite == true }
+            .forEach{ charList.append($0.aCharacter()) }
+
         return ScrollView(.horizontal, showsIndicators: false) {
             HStack (spacing: 0) {
-                ForEach(favoriteCharacters) { character in
+                ForEach(charList) { (character) in
                     NavigationLink(destination: DetailCharacterInfo()) {
                         self.eachCharacter(character)
                     }

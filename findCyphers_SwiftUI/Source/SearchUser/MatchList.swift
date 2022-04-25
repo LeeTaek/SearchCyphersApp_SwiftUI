@@ -20,9 +20,9 @@ struct MatchList: View {
                 
                 if showSearchRecord {
                     searchRecord
+                        .animation(.easeInOut, value: showSearchRecord)
+
                 }
-                
-             
                 
                 Spacer()
                 

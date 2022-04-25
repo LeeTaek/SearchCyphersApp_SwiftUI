@@ -9,6 +9,7 @@ import SwiftUI
 import Alamofire
 import Kingfisher
 
+
 struct MatchListRow: View {
     @EnvironmentObject private var characters : CharacterViewModel
     @State private var willAppear: Bool = false

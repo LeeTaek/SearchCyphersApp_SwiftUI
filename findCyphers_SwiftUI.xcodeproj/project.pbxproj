@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7415A4C12810160F007D8538 /* MatchListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C02810160F007D8538 /* MatchListRow.swift */; };
 		7415A4C3281017FE007D8538 /* MatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C2281017FE007D8538 /* MatchList.swift */; };
+		742B5A1D28167B0B003BE6B7 /* FavoriteCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742B5A1C28167B0B003BE6B7 /* FavoriteCharacters.swift */; };
 		74354E5A280E661000D8B642 /* UserMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74354E59280E661000D8B642 /* UserMatchViewModel.swift */; };
 		746475CE2810F4C9005833AA /* FavoriteCharacterScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746475CD2810F4C9005833AA /* FavoriteCharacterScrollView.swift */; };
 		74877BCF280EA308009A7140 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74877BCE280EA308009A7140 /* MatchDetailView.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		7415A4C02810160F007D8538 /* MatchListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRow.swift; sourceTree = "<group>"; };
 		7415A4C2281017FE007D8538 /* MatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchList.swift; sourceTree = "<group>"; };
+		742B5A1C28167B0B003BE6B7 /* FavoriteCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCharacters.swift; sourceTree = "<group>"; };
 		74354E59280E661000D8B642 /* UserMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatchViewModel.swift; sourceTree = "<group>"; };
 		74354E5D280E718700D8B642 /* findCyphers-SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "findCyphers-SwiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
 		746475CD2810F4C9005833AA /* FavoriteCharacterScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCharacterScrollView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				749BE2E1280D288D0060FB61 /* PlayerInfo.swift */,
 				74D70092280FDADD00243CF2 /* Character.swift */,
+				742B5A1C28167B0B003BE6B7 /* FavoriteCharacters.swift */,
 				749BE2E4280D28A10060FB61 /* URL.swift */,
 				749BE301280D55C90060FB61 /* MyError.swift */,
 				74354E59280E661000D8B642 /* UserMatchViewModel.swift */,
@@ -353,6 +356,7 @@
 				749BE2F8280D54CB0060FB61 /* MyAlamofireManager.swift in Sources */,
 				746475CE2810F4C9005833AA /* FavoriteCharacterScrollView.swift in Sources */,
 				749BE2CF280D26C00060FB61 /* findCyphers_SwiftUIApp.swift in Sources */,
+				742B5A1D28167B0B003BE6B7 /* FavoriteCharacters.swift in Sources */,
 				74D70093280FDADD00243CF2 /* Character.swift in Sources */,
 				749BE2FA280D555D0060FB61 /* MyLogger.swift in Sources */,
 				74D7009C280FF3FE00243CF2 /* CharacterInfoList.swift in Sources */,
