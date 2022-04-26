@@ -10,10 +10,8 @@ import Kingfisher
 import RealmSwift
 
 struct FavoriteCharacterScrollView: View {
-    @EnvironmentObject private var characterVM: CharacterViewModel
     @Binding var showingImage: Bool
-    var favoriteChar = FavoriteCharacters()
-
+    @ObservedResults(FavoriteCharacters.self) var favorite
     
     var body: some View {
         VStack(alignment: .leading){
@@ -26,6 +24,7 @@ struct FavoriteCharacterScrollView: View {
         }.padding()
             .transition(.slide)
     }
+    
     
     //MARK: - 캐릭터 창 타이틀
     var title: some View {
@@ -52,43 +51,27 @@ struct FavoriteCharacterScrollView: View {
     }
     
     
-//    //MARK: - API 기반 캐릭터 스크롤뷰
-//    var characters: some View {
-//        let favoriteCharactersList = characterVM.characters.filter { $0.isFavorite }
-//
-//        return ScrollView(.horizontal, showsIndicators: false) {
-//            HStack (spacing: 0) {
-//                ForEach(favoriteCharactersList) { character in
-//                    NavigationLink(destination: DetailCharacterInfo()) {
-//                        self.eachCharacter(character)
-//                    }
-//                }
-//            }
-//        }.animation(.spring(dampingFraction: 0.78))
-//    }
-
+    
     
     
     //MARK: - realm 기반 선호 캐릭터 스크롤뷰
     var characters: some View {
-        
-        let realm = try! Realm()
-        var charList = [CharacterInfo]()
-        
-        realm.objects(FavoriteCharacters.self)
-            .filter{ $0.isFavorite == true }
-            .forEach{ charList.append($0.aCharacter()) }
 
         return ScrollView(.horizontal, showsIndicators: false) {
             HStack (spacing: 0) {
-                ForEach(charList) { (character) in
-                    NavigationLink(destination: DetailCharacterInfo()) {
-                        self.eachCharacter(character)
+                ForEach(favorite) { (character) in
+                    if character.isFavorite == true {
+                        NavigationLink(destination: DetailCharacterInfo()) {
+                            self.eachCharacter(character.aCharacter())
+                        }
                     }
                 }
             }
-        }.animation(.spring(dampingFraction: 0.78))
+        }.animation(.spring(dampingFraction: 0.78), value: favorite)
+        
     }
+    
+    
     
     
     //MARK: - 캐릭터 이미지
@@ -114,6 +97,9 @@ struct FavoriteCharacterScrollView: View {
             
         }.frame(width: 105, height: 105)
     }
+    
+    
+    
     
     
     //MARK: - 캐릭터 이미지 사이즈 조절

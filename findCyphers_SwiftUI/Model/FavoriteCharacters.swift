@@ -14,8 +14,6 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id: String
     @Persisted var name: String = ""
     @Persisted var isFavorite: Bool = false
-    var charactersList = RealmSwift.List<FavoriteCharacters>()
-
     
     convenience init(id: String, name: String, isFavorite: Bool) {
         self.init()
@@ -23,6 +21,7 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
         self.name = name
         self.isFavorite = isFavorite
     }
+    
     
     
     // Realm에 추가
@@ -39,6 +38,7 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
     }
     
     
+    
     // 해당 캐릭터의 데이터가 존재하는지 확인
     func isContains(character: CharacterInfo) -> Bool {
         
@@ -49,9 +49,8 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
         return true
                 
     }
-    
-    
-    // 업데이트
+
+    // 선호하는 캐릭터 설정
     func toggleFavorite(character: CharacterInfo) {
 
         let realm = try! Realm()
@@ -60,9 +59,9 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
         try! realm.write{
             updateChar?.isFavorite.toggle()
         }
-        
-        
     }
+    
+    
     
     // 삭제
     func removeCharacter(character: CharacterInfo) {
@@ -78,8 +77,15 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
     
     // 캐릭터
     func aCharacter() -> CharacterInfo {
-        CharacterInfo(characterId: CharacterId(characterId: self.id, characterName: self.name), isFavorite: self.isFavorite)
+      CharacterInfo(characterId: CharacterId(characterId: self.id, characterName: self.name), isFavorite: self.isFavorite)
     }
+    
+    
+    
+    
+
+    
+    
     
     
 }

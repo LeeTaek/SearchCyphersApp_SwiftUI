@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct CharacterInfoRow: View {
-    @EnvironmentObject private var characters : CharacterViewModel
     var character : CharacterInfo
     
     var body: some View {

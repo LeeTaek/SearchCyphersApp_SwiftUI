@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import RealmSwift
+
 
 struct CharacterInfoList: View {
-    
-    @EnvironmentObject var characterVM : CharacterViewModel
     @State private var showingFavoriteCharacters: Bool = true
+    @ObservedResults(FavoriteCharacters.self) var favorite
 
     var body: some View {
         
@@ -35,31 +36,44 @@ struct CharacterInfoList: View {
 
     }
     
+    
     //MARK: - 선호 캐릭터 보여줄까?
     var showFavorite: Bool {
-        !characterVM.characters.filter{ $0.isFavorite }.isEmpty
+        var result = false
+        
+        favorite.forEach {
+            if $0.isFavorite == true {
+                result = true
+            }
+        }
+    
+        return result
     }
+    
+    
     
     //MARK: - 선호 캐릭터 창
     var favoriteCharacters: some View {
         FavoriteCharacterScrollView(showingImage: $showingFavoriteCharacters)
-            .padding(.top, 24)
+            .padding(.top, 12)
             .padding(.bottom, 8)
     }
     
+    
+
+    
     //MARK: - 캐릭터 리스트
     var characterList: some View {
-        List(characterVM.characters) { cha in
+        List(favorite) { cha in
             HStack {
-                CharacterInfoRow(character: cha)
+                CharacterInfoRow(character: cha.aCharacter())
                 NavigationLink(destination: DetailCharacterInfo()) {
                     EmptyView()
                 }.frame(width: 0)
             }
-         
         }
-        
     }
+    
     
     
 }

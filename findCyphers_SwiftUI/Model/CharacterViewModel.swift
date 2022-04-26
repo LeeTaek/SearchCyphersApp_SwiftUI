@@ -13,7 +13,6 @@ import SwiftUI
 class CharacterViewModel: ObservableObject {
     
     var subscription = Set<AnyCancellable>()
-//    var favoriteChar = FavoriteCharacters()
     var favoriteChar = FavoriteCharacters()
     @Published var characters = [CharacterInfo]()
 
@@ -51,18 +50,18 @@ class CharacterViewModel: ObservableObject {
     
     //MARK: - realm 데이터베이스에서 캐릭터 정보를 가져옴
     func fetchCharacter() {
-
         let realm = try! Realm()
         let savedDatas = realm.objects(FavoriteCharacters.self)
         var charList = [CharacterInfo]()
-            
+        
         savedDatas.forEach{
             charList.append($0.aCharacter())
         }
-                
+        
         self.characters = charList
     }
 
+    
     
     
     //MARK: - 선호 캐릭터 설정 토글

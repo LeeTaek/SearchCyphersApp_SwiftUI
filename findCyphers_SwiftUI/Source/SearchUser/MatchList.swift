@@ -40,7 +40,6 @@ struct MatchList: View {
         List(userInfo.match, id:\.matchId) { matchingInfo in
             HStack {
                 MatchListRow(matchInfo: matchingInfo)
-                    .animation(.easeInOut)
                 NavigationLink(destination: MatchDetailView(matchingInfo: matchingInfo)) {
                     EmptyView()
                 }.frame(width: 0)
