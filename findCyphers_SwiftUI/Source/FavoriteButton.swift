@@ -11,6 +11,8 @@ import RealmSwift
 struct FavoriteButton: View {
     var favoriteChar = FavoriteCharacters()
     var character : CharacterInfo
+    @EnvironmentObject private var characters : CharacterViewModel
+
     
     
     var body: some View {
@@ -23,6 +25,7 @@ struct FavoriteButton: View {
             .onTapGesture {
                 withAnimation { // 즐겨찾기 여부 추가 
                     self.favoriteChar.toggleFavorite(character: self.character)
+                    self.characters.toggleFavorite(of: self.character)
                  }
             }
             

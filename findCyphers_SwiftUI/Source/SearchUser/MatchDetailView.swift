@@ -16,7 +16,7 @@ struct MatchDetailView: View {
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
         
-                NavigationLink(destination: Hitmap()) {
+                NavigationLink(destination: Hitmap(matchId: matchingInfo.matchId)) {
                    Image(systemName: "map")
                         .foregroundColor(.renatocolor)
                 }
@@ -26,6 +26,14 @@ struct MatchDetailView: View {
         .navigationBarTitle(Text("매칭 상세 기록"), displayMode: .inline)
         
     }
+    
+    var matchDescription: some View {
+        
+        Text("matchDescription")
+    }
+    
+    
+    
 }
 
 

@@ -6,13 +6,10 @@
 //
 
 import SwiftUI
-import Combine
-import RealmSwift
 
 struct MatchList: View {
     @EnvironmentObject private var characters : CharacterViewModel
     @ObservedObject var userInfo = UserMatchViewModel()
-    @ObservedRealmObject var favorite = FavoriteCharacters()
     
 
     @State var nickname: String = ""
@@ -42,14 +39,10 @@ struct MatchList: View {
     
     
    
-    
-    
-    
     //MARK: - 검색기록 보여줄까?
     var showSearchRecord: Bool {
         !userInfo.nicknameList.isEmpty
     }
-    
     
     
     
@@ -109,10 +102,12 @@ struct MatchList: View {
     var matchingList: some View {
         List(userInfo.match, id:\.matchId) { matchingInfo in
             HStack {
-                MatchListRow(favorite: favorite, matchInfo: matchingInfo)
+                MatchListRow(matchInfo: matchingInfo)
                 NavigationLink(destination: MatchDetailView(matchingInfo: matchingInfo)) {
                     EmptyView()
                 }.frame(width: 0)
+                
+    
                     
             }
         }

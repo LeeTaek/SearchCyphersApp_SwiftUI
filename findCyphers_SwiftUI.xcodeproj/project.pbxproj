@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7415A4C12810160F007D8538 /* MatchListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C02810160F007D8538 /* MatchListRow.swift */; };
 		7415A4C3281017FE007D8538 /* MatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C2281017FE007D8538 /* MatchList.swift */; };
+		74299BC828191C9700D373F1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74299BC728191C9700D373F1 /* WebView.swift */; };
 		742B5A1D28167B0B003BE6B7 /* FavoriteCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742B5A1C28167B0B003BE6B7 /* FavoriteCharacters.swift */; };
 		74354E5A280E661000D8B642 /* UserMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74354E59280E661000D8B642 /* UserMatchViewModel.swift */; };
 		746475CE2810F4C9005833AA /* FavoriteCharacterScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746475CD2810F4C9005833AA /* FavoriteCharacterScrollView.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		7415A4C02810160F007D8538 /* MatchListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRow.swift; sourceTree = "<group>"; };
 		7415A4C2281017FE007D8538 /* MatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchList.swift; sourceTree = "<group>"; };
+		74299BC728191C9700D373F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		742B5A1C28167B0B003BE6B7 /* FavoriteCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCharacters.swift; sourceTree = "<group>"; };
 		74354E59280E661000D8B642 /* UserMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatchViewModel.swift; sourceTree = "<group>"; };
 		74354E5D280E718700D8B642 /* findCyphers-SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "findCyphers-SwiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -200,6 +202,7 @@
 				749BE2FB280D55790060FB61 /* MyAPIStatusLogger.swift */,
 				749BE2FD280D55920060FB61 /* BaseInterceptor.swift */,
 				749BE2FF280D55A90060FB61 /* MySearchRouter.swift */,
+				74299BC728191C9700D373F1 /* WebView.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				74D70098280FDFB900243CF2 /* CharacterViewModel.swift in Sources */,
 				74D70096280FDC8700243CF2 /* CharacterInfoRow.swift in Sources */,
 				749BE2FC280D55790060FB61 /* MyAPIStatusLogger.swift in Sources */,
+				74299BC828191C9700D373F1 /* WebView.swift in Sources */,
 				749BE2FE280D55920060FB61 /* BaseInterceptor.swift in Sources */,
 				74354E5A280E661000D8B642 /* UserMatchViewModel.swift in Sources */,
 				749BE2F8280D54CB0060FB61 /* MyAlamofireManager.swift in Sources */,

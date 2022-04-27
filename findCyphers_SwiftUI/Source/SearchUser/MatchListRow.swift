@@ -10,7 +10,7 @@ import Kingfisher
 import RealmSwift
 
 struct MatchListRow: View {
-    @ObservedRealmObject var favorite : FavoriteCharacters
+    @ObservedRealmObject var favorite = FavoriteCharacters()
     @State private var willAppear: Bool = false
 
     let matchInfo: MatchRow
@@ -164,6 +164,6 @@ struct MatchListRow: View {
 
 struct MatchListRow_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListRow(favorite: FavoriteCharacters(), matchInfo: MatchRowSamples[0])
+        MatchListRow(matchInfo: MatchRowSamples[0])
     }
 }

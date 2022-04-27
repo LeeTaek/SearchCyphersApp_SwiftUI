@@ -13,6 +13,7 @@ import SwiftUI
 class CharacterViewModel: ObservableObject {
     
     var subscription = Set<AnyCancellable>()
+    
     var favoriteChar = FavoriteCharacters()
     @Published var characters = [CharacterInfo]()
 
