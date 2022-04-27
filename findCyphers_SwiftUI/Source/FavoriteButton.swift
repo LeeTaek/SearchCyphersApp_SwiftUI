@@ -22,14 +22,14 @@ struct FavoriteButton: View {
             .foregroundColor(.renatocolor)
             .onTapGesture {
                 withAnimation { // 즐겨찾기 여부 추가 
-//                    self.characters.toggleFavorite(of: self.character)
                     self.favoriteChar.toggleFavorite(character: self.character)
                  }
             }
             
     }
+
     
-    var heartImage : String {
+    var heartImage : String {        
         character.isFavorite ? "heart.fill" : "heart"
         
     }

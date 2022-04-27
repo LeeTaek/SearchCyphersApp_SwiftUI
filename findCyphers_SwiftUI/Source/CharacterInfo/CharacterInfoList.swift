@@ -52,7 +52,7 @@ struct CharacterInfoList: View {
     
     
     
-    //MARK: - 선호 캐릭터 창
+    //MARK: - 선호 캐릭터 리스트
     var favoriteCharacters: some View {
         FavoriteCharacterScrollView(showingImage: $showingFavoriteCharacters)
             .padding(.top, 12)
@@ -62,11 +62,11 @@ struct CharacterInfoList: View {
     
 
     
-    //MARK: - 캐릭터 리스트
+    //MARK: - 전체 캐릭터 리스트
     var characterList: some View {
         List(favorite) { cha in
             HStack {
-                CharacterInfoRow(character: cha.aCharacter())
+                CharacterInfoRow(character: cha.aCharacters())
                 NavigationLink(destination: DetailCharacterInfo()) {
                     EmptyView()
                 }.frame(width: 0)

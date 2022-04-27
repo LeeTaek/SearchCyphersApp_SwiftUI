@@ -39,7 +39,7 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
     
     
     
-    // 해당 캐릭터의 데이터가 존재하는지 확인
+    // 캐릭터 업데이트용 : 해당 캐릭터의 데이터가 존재하는지 확인
     func isContains(character: CharacterInfo) -> Bool {
         
         let realm = try! Realm()
@@ -50,14 +50,26 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
                 
     }
 
+    
+    // 특정 캐릭터 검색
+    func aCharacter(id: String) -> CharacterInfo {
+        let realm = try! Realm()
+       
+        let char = realm.object(ofType: FavoriteCharacters.self, forPrimaryKey: id)!
+        
+        return CharacterInfo(characterId: CharacterId(characterId: char.id, characterName: char.name), isFavorite: char.isFavorite)
+    }
+    
+    
     // 선호하는 캐릭터 설정
     func toggleFavorite(character: CharacterInfo) {
 
         let realm = try! Realm()
-        let updateChar = realm.object(ofType: FavoriteCharacters.self, forPrimaryKey: character.characterId.characterId)
+        let updateChar = realm.object(ofType: FavoriteCharacters.self, forPrimaryKey: character.characterId.characterId)!
         
         try! realm.write{
-            updateChar?.isFavorite.toggle()
+            updateChar.isFavorite.toggle()
+            realm.add(updateChar, update: .modified)
         }
     }
     
@@ -75,17 +87,10 @@ class FavoriteCharacters: Object, ObjectKeyIdentifiable {
     }
     
     
-    // 캐릭터
-    func aCharacter() -> CharacterInfo {
+    // 전체 캐릭터
+    func aCharacters() -> CharacterInfo {
       CharacterInfo(characterId: CharacterId(characterId: self.id, characterName: self.name), isFavorite: self.isFavorite)
     }
-    
-    
-    
-    
-
-    
-    
     
     
 }

@@ -55,7 +55,7 @@ class CharacterViewModel: ObservableObject {
         var charList = [CharacterInfo]()
         
         savedDatas.forEach{
-            charList.append($0.aCharacter())
+            charList.append($0.aCharacters())
         }
         
         self.characters = charList

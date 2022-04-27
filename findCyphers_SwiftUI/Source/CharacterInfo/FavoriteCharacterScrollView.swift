@@ -26,6 +26,8 @@ struct FavoriteCharacterScrollView: View {
     }
     
     
+    
+    
     //MARK: - 캐릭터 창 타이틀
     var title: some View {
         HStack(alignment: .top, spacing: 5) {
@@ -62,7 +64,7 @@ struct FavoriteCharacterScrollView: View {
                 ForEach(favorite) { (character) in
                     if character.isFavorite == true {
                         NavigationLink(destination: DetailCharacterInfo()) {
-                            self.eachCharacter(character.aCharacter())
+                            self.eachCharacter(character.aCharacters())
                         }
                     }
                 }

@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-import Alamofire
 import Kingfisher
-
+import RealmSwift
 
 struct MatchListRow: View {
-    @EnvironmentObject private var characters : CharacterViewModel
+    @ObservedRealmObject var favorite : FavoriteCharacters
     @State private var willAppear: Bool = false
 
     let matchInfo: MatchRow
@@ -52,6 +51,7 @@ struct MatchListRow: View {
     }
     
     
+    
     //MARK: - 캐릭터 이미지
     var characterImage: some View {
         GeometryReader { _ in
@@ -76,7 +76,8 @@ struct MatchListRow: View {
     
     
     
-    //MARK: - 캐릭터 정보
+    
+    //MARK: - 매칭 정보
     var matchDescription: some View {
        
         VStack() {
@@ -141,26 +142,28 @@ struct MatchListRow: View {
                 .cornerRadius(16)
             
             Spacer()
+                        
             
-            FavoriteButton(character: characters.findCharInfo(of: charId))
-            
+            FavoriteButton(character: self.favorite.aCharacter(id: matchInfo.playInfo.characterId))
+
+
             
         }
     }
                            
     
     //MARK: - 캐릭터 아이디
-    var charId: CharacterId {
-        CharacterId(characterId: matchInfo.playInfo.characterId, characterName: matchInfo.playInfo.characterName)
+    var charId: CharacterInfo {
+        self.favorite.aCharacter(id: matchInfo.playInfo.characterId)
+
     }
                            
-    
 }
 
 
 
 struct MatchListRow_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListRow(matchInfo: MatchRowSamples[0])
+        MatchListRow(favorite: FavoriteCharacters(), matchInfo: MatchRowSamples[0])
     }
 }

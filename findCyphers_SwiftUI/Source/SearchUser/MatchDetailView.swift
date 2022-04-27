@@ -11,9 +11,23 @@ struct MatchDetailView: View {
     let matchingInfo: MatchRow
     
     var body: some View {
-        Text("Hello, World!")
+        VStack{
+            Text("MatchDetailView")
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+        
+                NavigationLink(destination: Hitmap()) {
+                   Image(systemName: "map")
+                        .foregroundColor(.renatocolor)
+                }
+                
+            }
+        }
+        .navigationBarTitle(Text("매칭 상세 기록"), displayMode: .inline)
+        
     }
 }
+
 
 struct MatchDetailView_Previews: PreviewProvider {
     static var previews: some View {

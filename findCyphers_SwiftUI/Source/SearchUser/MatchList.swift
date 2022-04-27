@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import Combine
+import RealmSwift
 
 struct MatchList: View {
     @EnvironmentObject private var characters : CharacterViewModel
     @ObservedObject var userInfo = UserMatchViewModel()
+    @ObservedRealmObject var favorite = FavoriteCharacters()
+    
+
     @State var nickname: String = ""
     
     var body: some View {
@@ -35,22 +40,17 @@ struct MatchList: View {
 
     }
     
-    //MARK: - 매칭 리스트
-    var matchingList: some View {
-        List(userInfo.match, id:\.matchId) { matchingInfo in
-            HStack {
-                MatchListRow(matchInfo: matchingInfo)
-                NavigationLink(destination: MatchDetailView(matchingInfo: matchingInfo)) {
-                    EmptyView()
-                }.frame(width: 0)
-            }
-        }
-    }
+    
+   
+    
+    
     
     //MARK: - 검색기록 보여줄까?
     var showSearchRecord: Bool {
         !userInfo.nicknameList.isEmpty
     }
+    
+    
     
     
     
@@ -79,6 +79,8 @@ struct MatchList: View {
     }
 
     
+    
+    
     //MARK: - 검색기록
     var searchRecord: some View {
         ScrollView(.horizontal, showsIndicators:  false) {
@@ -100,7 +102,27 @@ struct MatchList: View {
         }.padding([.leading, .trailing])
             .transition(.opacity)
     }
+
+    
+    
+    //MARK: - 매칭 리스트 기록
+    var matchingList: some View {
+        List(userInfo.match, id:\.matchId) { matchingInfo in
+            HStack {
+                MatchListRow(favorite: favorite, matchInfo: matchingInfo)
+                NavigationLink(destination: MatchDetailView(matchingInfo: matchingInfo)) {
+                    EmptyView()
+                }.frame(width: 0)
+                    
+            }
+        }
+    }
+    
+    
+    
+    
 }
+
 
 struct MatchList_Previews: PreviewProvider {
     static var previews: some View {
