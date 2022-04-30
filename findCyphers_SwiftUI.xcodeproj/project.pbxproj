@@ -10,6 +10,8 @@
 		7415A4C12810160F007D8538 /* MatchListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C02810160F007D8538 /* MatchListRow.swift */; };
 		7415A4C3281017FE007D8538 /* MatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415A4C2281017FE007D8538 /* MatchList.swift */; };
 		74299BC828191C9700D373F1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74299BC728191C9700D373F1 /* WebView.swift */; };
+		74299BCA28192BCB00D373F1 /* DetailMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74299BC928192BCA00D373F1 /* DetailMatchViewModel.swift */; };
+		74299BCC2819347000D373F1 /* DetailMatchViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74299BCB2819347000D373F1 /* DetailMatchViewRow.swift */; };
 		742B5A1D28167B0B003BE6B7 /* FavoriteCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742B5A1C28167B0B003BE6B7 /* FavoriteCharacters.swift */; };
 		74354E5A280E661000D8B642 /* UserMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74354E59280E661000D8B642 /* UserMatchViewModel.swift */; };
 		746475CE2810F4C9005833AA /* FavoriteCharacterScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746475CD2810F4C9005833AA /* FavoriteCharacterScrollView.swift */; };
@@ -42,6 +44,8 @@
 		7415A4C02810160F007D8538 /* MatchListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRow.swift; sourceTree = "<group>"; };
 		7415A4C2281017FE007D8538 /* MatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchList.swift; sourceTree = "<group>"; };
 		74299BC728191C9700D373F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		74299BC928192BCA00D373F1 /* DetailMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchViewModel.swift; sourceTree = "<group>"; };
+		74299BCB2819347000D373F1 /* DetailMatchViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchViewRow.swift; sourceTree = "<group>"; };
 		742B5A1C28167B0B003BE6B7 /* FavoriteCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCharacters.swift; sourceTree = "<group>"; };
 		74354E59280E661000D8B642 /* UserMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatchViewModel.swift; sourceTree = "<group>"; };
 		74354E5D280E718700D8B642 /* findCyphers-SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "findCyphers-SwiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -174,6 +178,7 @@
 				749BE301280D55C90060FB61 /* MyError.swift */,
 				74354E59280E661000D8B642 /* UserMatchViewModel.swift */,
 				74D70097280FDFB900243CF2 /* CharacterViewModel.swift */,
+				74299BC928192BCA00D373F1 /* DetailMatchViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				7415A4C2281017FE007D8538 /* MatchList.swift */,
 				7415A4C02810160F007D8538 /* MatchListRow.swift */,
 				74877BCE280EA308009A7140 /* MatchDetailView.swift */,
+				74299BCB2819347000D373F1 /* DetailMatchViewRow.swift */,
 				74A085B62818389A00112E5C /* Hitmap.swift */,
 			);
 			path = SearchUser;
@@ -349,6 +355,7 @@
 				74D70091280FD5E100243CF2 /* mainTabView.swift in Sources */,
 				74D7009E280FF55600243CF2 /* DetailCharacterInfo.swift in Sources */,
 				749BE300280D55A90060FB61 /* MySearchRouter.swift in Sources */,
+				74299BCC2819347000D373F1 /* DetailMatchViewRow.swift in Sources */,
 				74A085B72818389A00112E5C /* Hitmap.swift in Sources */,
 				7415A4C12810160F007D8538 /* MatchListRow.swift in Sources */,
 				749BE2E2280D288D0060FB61 /* PlayerInfo.swift in Sources */,
@@ -356,6 +363,7 @@
 				74877BCF280EA308009A7140 /* MatchDetailView.swift in Sources */,
 				749BE2D1280D26C00060FB61 /* Home.swift in Sources */,
 				74D70098280FDFB900243CF2 /* CharacterViewModel.swift in Sources */,
+				74299BCA28192BCB00D373F1 /* DetailMatchViewModel.swift in Sources */,
 				74D70096280FDC8700243CF2 /* CharacterInfoRow.swift in Sources */,
 				749BE2FC280D55790060FB61 /* MyAPIStatusLogger.swift in Sources */,
 				74299BC828191C9700D373F1 /* WebView.swift in Sources */,

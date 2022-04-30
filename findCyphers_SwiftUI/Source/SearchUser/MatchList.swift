@@ -47,7 +47,7 @@ struct MatchList: View {
     
     
     
-    //MARK: - 닉네임 검색 창
+    //MARK: - 닉네임 검색 , userInfo를 통해 API호출해 검색기록 받아옴.
     var searchUser: some View {
         HStack {
             TextField("닉네임을 입력하세요", text: $nickname, onCommit: {

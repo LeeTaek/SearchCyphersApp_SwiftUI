@@ -9,10 +9,14 @@ import SwiftUI
 
 struct MatchDetailView: View {
     let matchingInfo: MatchRow
+    @ObservedObject var detailMatchInfo = DetailMatchViewModel()
+    
+    private let gameResult = ["승리", "패배"]
+
     
     var body: some View {
         VStack{
-            Text("MatchDetailView")
+            matchDescription
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
         
@@ -27,9 +31,19 @@ struct MatchDetailView: View {
         
     }
     
+    
+    
+    
+    
     var matchDescription: some View {
+        detailMatchInfo.fetchDetailMatch(matchId: matchingInfo.matchId)
         
-        Text("matchDescription")
+        return List(detailMatchInfo.detailMatchInfo.players, id: \.playerId) {  player in
+
+           HStack {
+               Text("\(player.nickname)")
+           }
+        }
     }
     
     

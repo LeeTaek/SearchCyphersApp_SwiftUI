@@ -37,7 +37,7 @@ class UserMatchViewModel: ObservableObject {
             .publishDecodable(type: UserInfo.self )
             .compactMap{ $0.value }
             .sink(receiveCompletion: { completion in
-                print("데이터 스트림 성공")
+                print("UserId 데이터 스트림 성공")
             }, receiveValue: { (receivedValue : UserInfo) in
                 print(" 유저 ID : \(receivedValue)")
                 guard let userInfo =  receivedValue.rows.first?.playerId else { print("닉네임 없음") ; return }
@@ -66,7 +66,7 @@ class UserMatchViewModel: ObservableObject {
             .compactMap{ $0.value }
             .map{ $0.matches.rows }
             .sink(receiveCompletion: { completion in
-                print("데이터 스트림 성공")
+                print("MatchInfo 데이터 스트림 성공")
             }, receiveValue: { (receivedValue : [MatchRow]) in
                 print("매칭 데이터 받은 값 : \(receivedValue.count)")
                 self.match = receivedValue
@@ -74,6 +74,7 @@ class UserMatchViewModel: ObservableObject {
     }
     
     
+  
     
     func getUserInfo(_ nickname: String) {
         self.nickname = nickname

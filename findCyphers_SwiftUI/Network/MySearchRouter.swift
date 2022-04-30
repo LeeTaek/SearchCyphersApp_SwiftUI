@@ -13,6 +13,7 @@ enum MySearchRouter: URLRequestConvertible {
     
     case searchPlayerId(term: String )
     case searchMatches(term: String, gameType: String)
+    case searchDetailMatching(term: String)
     case searchRank
     
     var baseURL: URL {
@@ -36,6 +37,9 @@ enum MySearchRouter: URLRequestConvertible {
         case .searchRank :
             return "ranking/ratingpoint"
             
+        case let .searchDetailMatching(term) :
+            return "matches/\(term)"
+            
         }
         
     }
@@ -53,6 +57,9 @@ enum MySearchRouter: URLRequestConvertible {
             
         case .searchRank :
             return ["limit":"30"]
+            
+        case .searchDetailMatching :
+            return [:]
     
         }
     }
@@ -62,8 +69,7 @@ enum MySearchRouter: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
         
             let url = baseURL.appendingPathComponent(endPoint)
-            print("MySearchRouter - asURLRequest() url : \(url)")
-            
+        
             var request = URLRequest(url: url)
             request.method = method
             

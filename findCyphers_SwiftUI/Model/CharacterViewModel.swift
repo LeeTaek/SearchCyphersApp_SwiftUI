@@ -73,11 +73,11 @@ class CharacterViewModel: ObservableObject {
         
     
     
-    
-    //MARK: - 캐릭터 아이디를 가지고 캐릭터 선호캐릭터 여부와 정보 호출
-    func findCharInfo(of character: CharacterId) -> CharacterInfo {
-        return characters.filter{ $0.characterId == character }[0]
-    }
-    
+//    
+//    //MARK: - 캐릭터 아이디를 가지고 캐릭터 선호캐릭터 여부와 정보 호출
+//    func findCharInfo(of character: CharacterId) -> CharacterInfo {
+//        return characters.filter{ $0.characterId == character }[0]
+//    }
+//    
     
 }

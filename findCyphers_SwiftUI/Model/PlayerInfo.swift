@@ -19,6 +19,15 @@ struct DetailMatchInfo: Codable {
     let map: Map
     let teams: [Team]
     let players: [Player]
+    
+    init() {
+        self.date = ""
+        self.gameTypeId = ""
+        self.map = mapSample
+        self.teams = [Team(result: "win", players: ["안녕", "하세요"])]
+        self.players = [Player(), Player()]
+    }
+    
 }
 
 
@@ -26,9 +35,18 @@ struct DetailMatchInfo: Codable {
 struct Player: Codable {
     let playerId, nickname: String
     let map: Map
-    let playInfo: PlayInfo
+    let playInfo: DetailPlayInfo
     let position: Position
     let items: [Item]
+    
+    init() {
+        self.playerId = "be9f5ed18e0acee9a535e3c89533546a"
+        self.nickname = "택꽁이"
+        self.map = mapSample
+        self.playInfo = detailplayinfoSample
+        self.position = positionSample
+        self.items = [Item()]
+    }
 
 }
 
@@ -87,6 +105,25 @@ struct Map: Codable {
     let name: String
 }
 
+//MARK: - DetailPlayInfo
+struct DetailPlayInfo: Codable {
+    let random: Bool
+    let partyUserCount: Int
+    let partyId: String?
+    let playTypeName: String?
+    let characterId, characterName: String
+    let level, killCount, deathCount, assistCount: Int
+    let attackPoint, damagePoint, battlePoint, sightPoint: Int
+    let towerAttackPoint, backAttackCount, comboCount, spellCount: Int
+    let healAmount, sentinelKillCount, demolisherKillCount, trooperKillCount: Int
+    let guardianKillCount, guardTowerKillCount, getCoin, spendCoin: Int
+    let spendConsumablesCoin, playTime, responseTime, minLifeTime: Int
+    let maxLifeTime: Int
+    
+  
+}
+
+
 // MARK: - PlayInfo
 struct PlayInfo: Codable {
     let res: String
@@ -115,6 +152,18 @@ struct Item: Codable {
     let rarityCode: String
     let rarityName: String
     let equipSlotCode, equipSlotName: String
+    
+    init() {
+        self.itemId = "071d53e05c9d6e2368a9bbdd7dbaf3d1"
+        self.itemName = "E 크래쉬 다운"
+        self.slotCode = "101"
+        self.slotName =  "손(공격)"
+        self.rarityCode = "104"
+        self.rarityName = "유니크"
+        self.equipSlotCode = "101"
+        self.equipSlotName = "손(공격)"
+    }
+
 
 }
 
@@ -162,7 +211,9 @@ let MatchRowSamples = [
 ]
 
 let mapSample = Map(name: "메트로폴리스")
+
 let playInfoSample = PlayInfo(res: "lose", random: false, partyUserCount: 0, partyInfo: nil, playTypeName: "정상", characterId: "052b8ab48199f154cbafc20a8ea7ebcf", characterName: "릭", level: 37, killCount: 1, deathCount: 7, assistCount: 11, attackPoint: 11998, damagePoint: 63664, battlePoint: 353, sightPoint: 496, towerAttackPoint: 978, backAttackCount: 28, comboCount: 36, spellCount: 0, healAmount: 0, sentinelKillCount: 1, demolisherKillCount: 3, trooperKillCount: 0, guardianKillCount: 0, guardTowerKillCount: 0, getCoin: 13340, spendCoin: 13000, spendConsumablesCoin: 5300, playTime: 1276, responseTime: 202, minLifeTime: 52, maxLifeTime: 283)
+
 let positionSample = Position(name: "탱커", explain: "체력 +7%, 회피 +5%", attribute: attributeSample)
 
 let attributeSample = [
@@ -174,3 +225,4 @@ let attributeSample = [
 ]
 
 
+let detailplayinfoSample = DetailPlayInfo(random: false, partyUserCount: 0, partyId: nil, playTypeName: nil, characterId: "ㅇㅇㅇ", characterName: "루이스", level: 40, killCount: 2, deathCount: 3, assistCount: 5, attackPoint: 12, damagePoint: 3, battlePoint: 45, sightPoint: 8, towerAttackPoint: 0, backAttackCount: 1, comboCount: 4, spellCount: 2, healAmount: 24, sentinelKillCount: 0, demolisherKillCount: 0, trooperKillCount: 10, guardianKillCount: 0, guardTowerKillCount: 04, getCoin: 2, spendCoin: 4, spendConsumablesCoin: 2, playTime: 1, responseTime: 3, minLifeTime: 5, maxLifeTime: 6)
