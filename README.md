@@ -1,6 +1,6 @@
 # SearchCyphersApp_SwiftUI
 
-SwiftUI에서 만들어보는 Cyphers 게임 전적 확인 및 코멘트 앱 
+SwiftUI로 만드는 온라인게임 'Cyphers' 전적확인 및 플레이스타일 코멘트 앱 
 
 업데이트 : 
 게임 전적 확인 및 선호 캐릭터 지정, 
